@@ -1,0 +1,11 @@
+id,question,optA,optB,optC,optD,answer,feedback
+1,改變圖形填充顏色的函數是?,stroke(),fill(),background(),noFill(),B,使用 fill(color) 可以設定形狀的填充顏色。
+2,繪製圓形的 p5.js 函數是?,rect(),line(),ellipse(),arc(),C,ellipse(x,y,w,h) 用來繪製圓或橢圓。
+3,改變筆畫（邊線）顏色的函數是?,stroke(),fill(),noStroke(),strokeWeight(),A,stroke(color) 設定筆畫顏色。
+4,設定文字大小要使用哪個函數?,textAlign(),textFont(),textSize(),text(),C,textSize(size) 可設定後續文字的大小。
+5,要在每一幀重複繪製畫面，應該把程式放在哪個函數?,setup(),preload(),mousePressed(),draw(),D,draw() 會在每一幀被呼叫，適合做動畫或重繪。
+6,要載入外部圖片通常使用哪個函數在 preload() 中?,createImage(),loadImage(),image(),preloadImage(),B,在 preload() 使用 loadImage(path) 可以預先載入圖片以避免閃爍。
+7,要取得滑鼠 X 座標的變數是?,pmouseX,width,mouseX,mouseY,C,mouseX 是 p5.js 內建變數，用來取得滑鼠目前的 X 座標。
+8,要設定畫布大小的函數是?,background(),createCanvas(),resizeCanvas(),size(),B,createCanvas(w,h) 用來建立指定寬高的畫布。
+9,要移除圖形邊框線條的函數是?,fill(),stroke(),noFill(),noStroke(),D,noStroke() 可以移除後續繪製圖形的邊框線條。
+10,要取得鍵盤按下的按鍵值應該使用哪個函數?,keyPressed(),keyIsPressed,mousePressed(),key,D,key 變數會儲存目前按下的鍵盤按鍵值。

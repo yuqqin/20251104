@@ -1,0 +1,187 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+canvas {
+  display: block;
+  margin-left: 60px; /* 為選單留空間 */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* 主頁樣式 */
+.main-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  z-index: 1;
+}
+
+.profile-info {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.profile-info h1 {
+  font-size: 3.5rem;
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+  font-family: 'Consolas', monospace;
+}
+
+.profile-info h2 {
+  font-size: 2.5rem;
+  color: white;
+  margin-top: 0.5rem;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+/* minor styling for page */
+body {
+  background: #1b2430;
+  color: #fff;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.profile-image-wrapper {
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+  margin: 2rem auto;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* center the canvas on wide screens */
+main, .sketch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 滑出式選單樣式 */
+.slide-menu {
+  position: fixed;
+  left: -200px; /* 初始隱藏 */
+  top: 0;
+  width: 200px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  transition: left 0.3s ease;
+  z-index: 1000;
+  padding: 20px 0;
+}
+
+.slide-menu:hover {
+  left: 0; /* 滑鼠靠近時滑出 */
+}
+
+/* 漢堡選單觸發區 */
+.menu-trigger {
+  position: absolute;
+  left: 200px;
+  top: 20px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 10px;
+}
+
+/* 漢堡圖示的三條線 */
+.menu-trigger span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* 滑鼠移過時漢堡圖示動畫效果 */
+.slide-menu:hover .menu-trigger span {
+  background-color: #FFD700;
+}
+
+.slide-menu:hover .menu-trigger span:first-child {
+  transform: translateY(1px);
+}
+
+.slide-menu:hover .menu-trigger span:last-child {
+  transform: translateY(-1px);
+}
+
+.menu-items {
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+}
+
+.menu-items li {
+  padding: 15px 25px;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.menu-items li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 3px solid #FFD700;
+}
+
+/* 子選單樣式 */
+.submenu {
+  display: none;
+  list-style: none;
+  padding: 10px 0 0 20px;
+  margin: 0;
+}
+
+.has-submenu:hover > .submenu {
+  display: block;
+}
+
+.submenu li {
+  padding: 10px 15px;
+  font-size: 0.9em;
+}
+
+.submenu li:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.menu-items a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.menu-items li:hover a {
+  color: #FFD700;
+  transform: translateX(5px);
+}
